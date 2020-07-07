@@ -1,0 +1,96 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.1/assets/img/favicons/favicon.ico">
+
+    <title>Melanoma-Forecaster</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      div.container {
+        font-size: 20px;
+      }
+      div.form-group {
+        font-size: 20px;
+      }
+      </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="starter-template">
+          <h2>Melonama-Forecaster: Risk of Sentinel Lymph Node Metastasis</h2>
+          <img src="/static/images/skin_cancer.jpg" alt="diabetes risk", width="280" height="300">
+          <p>To better measure your risk, please answer the following questions:</p>
+    </div>
+      <div class = "container">
+        <form  action="/predict" method="GET">
+          <div class="form-group">
+              <label for="RIDAGEYR">1. How old are you</label>
+              <input type="text" id="RIDAGEYR" name='RIDAGEYR' value= 45 step="any" min="20">
+          </div>
+          <div class="form-group">
+             <label for="RIAGENDR">2. Specify your gender</label>
+            <select id="RIAGENDR" name="RIAGENDR">
+              <option value="0,1">Male</option>
+              <option value="1,0">Female</option>
+          </select>
+          </div>
+        <div class = "form-group">
+            <form  action="/predict" method="GET">
+              <div class="form-group">
+                <label for="THICKNESS">3. What was the thinkness of your matosis</label>
+                <input type="text" id="THICKNESS" name='THICKNESS' value=1.0 step="any" min="0.1" max='10'>
+              </div>
+        </div>
+        <div class = "form-group">
+            <form  action="/predict" method="GET">
+              <div class="form-group">
+                <label for="NUMMAT">4. The number of matosis/mm area</label>
+                <input type="text" id="NUMMAT" name='NUMMAT' value= 4 step="any" min="0" max='10'>
+              </div>
+        </div>  
+        <div class="form-group">
+            <label for="edit-tumor-location">5. Where was your melanoma located?</label>
+            <select id="edit-tumor-location" name="tumor_location">
+                <option value="0,0,0,1">Trunk</option>
+                <option value="1,0,0,0">Extremity</option>
+                <option value="0,1,0,0">Head or Neck</option>
+                <option value="0,0,1,0">Others</option>
+            </select> 
+        </div>
+        <div class="form-group">
+            <label for="ulceration">6. Find ulceration on your report ?</label>
+            <select id="ulceration" name="ulceration">
+                <option value="0,1">Yes</option>
+                <option value="1,0">No</option>
+            </select>
+        </div>
+          <div class="starter-template">
+            <div>
+              <button type="submit" class="btn btn-primary">submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+      <script src="static/js/bootstrap.min.js"></script>
+
+    </div> <!-- /.container-->
+
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="static/js/bootstrap.min.js"></script>
+  </body>
+</html>
